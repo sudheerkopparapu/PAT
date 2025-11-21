@@ -1,0 +1,38 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project must have a test scenario",
+    "description": "Check that the project has a test scenario",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["CODE", "DEPLOYMENT", "AUTOMATION"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "3",
+          "mandatory": true
+      },
+      {
+          "name": "required_scenario_steps",
+          "label": "Required Scenario Steps",
+          "type": "MULTISELECT",
+          "selectChoices" : [
+              { "value": "flow_test", "label": "flow test"},
+              { "value": "exec_pytest", "label": "exec pytest"},
+              { "value": "check_dataset", "label": "check dataset"},
+              { "value": "check_consistency", "label": "check_consistency"}
+          ],
+          "defaultValue" : ["flow_test",  "exec_pytest", "check_dataset","check_consistency" ],
+          "mandatory": true
+      }
+  ]
+}

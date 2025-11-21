@@ -1,0 +1,32 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project must use global tags",
+    "description": "Check that the project uses global tags",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "1",
+          "mandatory": true
+      },
+      {
+          "name": "local_tags_to_ignore",
+          "label": "Local tags to ignore",
+          "type": "STRINGS",
+          "defaultValue" : ["downloads", "academy", "tutorial"],
+          "mandatory": true
+      }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+    "id": "instance-insights",
+    "version": "2.2.0",
+    "meta": {
+        "label": "PAT - (Project Assessment Tool)",
+        "category": "DSS Administrative tasks",
+        "description": "Automatic DSS Project Review Tools",
+        "author": "Dataiku (Pierre PETRELLA)",
+        "icon": "icon-cogs",
+        "licenseInfo": "Apache Software License",
+        "url": "https://www.dataiku.com/product/plugins/instance-insights/",
+        "tags": [
+            "Insights","Admin","Automation", "Assessment"
+        ],
+        "supportLevel": "NOT_SUPPORTED"
+    },
+    "params": [
+          {
+            "name": "separator_design_node",
+            "label": "Design node",
+            "type": "SEPARATOR"
+          },
+          {
+              "name": "use_external_design_node",
+              "label": "Use external design node",
+              "description": "Leave unchecked to use the local design node",
+              "defaultValue": false,
+              "type": "BOOLEAN"
+          },
+          {
+              "name": "design_host",
+              "label": "Design Node Host",
+              "type": "STRING",
+              "defaultValue": "https://",
+              "visibilityCondition": "model.use_external_design_node"
+          },           
+          {
+              "name": "design_admin_api_key",
+              "label": "Design Node Admin API Key",
+              "type": "PASSWORD",
+              "mandatory": true
+          },
+          {
+            "name": "separator_automation_nodes",
+            "label": "Automation nodes",
+            "type": "SEPARATOR"
+          },
+          {
+              "name": "connect_to_automation_nodes",
+              "label": "Connect to automation nodes",
+              "defaultValue": false,
+              "type": "BOOLEAN"
+          },
+          {
+              "name": "deployment_method",
+              "label": "Deployment Method",
+              "type": "SELECT",
+              "selectChoices" : [
+                  { "value": "manual", "label": "Manual"},
+                  { "value": "fm-gcp", "label": "Cloud Stacks GCP"},
+                  { "value": "fm-azure", "label": "Cloud Stacks Azure"},
+                  { "value": "fm-aws", "label": "Cloud Stacks AWS"}
+              ],
+              "visibilityCondition": "model.connect_to_automation_nodes",
+              "defaultValue" : "manual"
+          },
+          {
+            "name": "use_external_deployer_node",
+            "label": "Use external deployer node",
+            "defaultValue": false,
+            "description": "Leave unchecked to use the local deployer",
+            "type": "BOOLEAN",
+            "visibilityCondition": "model.connect_to_automation_nodes && model.deployment_method == 'manual'"
+          },
+          {
+              "name": "deployer_host",
+              "label": "Deployer Host",
+              "type": "STRING",
+              "defaultValue": "https://",
+              "mandatory": true,
+              "visibilityCondition": "model.connect_to_automation_nodes && model.deployment_method == 'manual' && model.use_external_deployer_node"
+          },           
+          {
+              "name": "deployer_api_key",
+              "label": "Deployer API Key",
+              "type": "PASSWORD",
+              "mandatory": true,
+              "visibilityCondition": "model.connect_to_automation_nodes && model.deployment_method == 'manual' && model.use_external_deployer_node"
+          },
+          {
+              "name": "fm_host",
+              "label": "host",
+              "type": "STRING",
+              "defaultValue": "https://",
+              "mandatory": true,
+              "visibilityCondition": "model.connect_to_automation_nodes && (model.deployment_method == 'fm-gcp' || model.deployment_method == 'fm-azure' || model.deployment_method == 'fm-aws')"
+          },
+          {
+              "name": "fm_api_key_id",
+              "label": "FM api key id",
+              "type": "STRING",
+              "mandatory": true,
+              "visibilityCondition": "model.connect_to_automation_nodes && (model.deployment_method == 'fm-gcp' || model.deployment_method == 'fm-azure' || model.deployment_method == 'fm-aws')"
+          },
+          {
+              "name": "fm_api_key_secret",
+              "label": "FM api key secret",
+              "type": "PASSWORD",
+              "mandatory": true,
+              "visibilityCondition": "model.connect_to_automation_nodes && (model.deployment_method == 'fm-gcp' || model.deployment_method == 'fm-azure' || model.deployment_method == 'fm-aws')"
+          },
+          {
+            "name": "infras",
+            "label": "Project infrastructures",
+            "type": "OBJECT_LIST",
+            "visibilityCondition": "model.connect_to_automation_nodes && model.deployment_method == 'manual'",
+            "subParams": [
+                {
+                    "type": "SEPARATOR",
+                    "label": "Infrastructure info"
+                },
+                {
+                    "name": "infra_id",
+                    "label": "Infrastructure ID",
+                    "type": "STRING",
+                    "mandatory": true
+                },
+                {
+                    "name": "infra_type",
+                    "type": "SELECT",
+                    "label": "Infrastructure type",
+                    "selectChoices": [
+                        { "value": "single", "label": "Single automation node" },
+                        { "value": "multi", "label": "Multiple automation nodes" }
+                    ],
+                    "defaultValue": "single",
+                    "mandatory": true
+                },
+                {
+                    "name": "auto_host",
+                    "label": "Automation Node Host",
+                    "defaultValue": "https://",
+                    "type": "STRING",
+                    "visibilityCondition": "model.infra_type == 'single'",
+                    "mandatory": true
+                },
+                {
+                    "name": "auto_api_key",
+                    "label": "Automation Node API Key",
+                    "type": "PASSWORD",
+                    "visibilityCondition": "model.infra_type == 'single'",
+                    "mandatory": true
+                },
+                {
+                    "name": "auto_multi_nodes",
+                    "label": "Automation Nodes",
+                    "type": "OBJECT_LIST",
+                    "visibilityCondition": "model.infra_type == 'multi'",
+                    "subParams": [
+                        {
+                            "type": "SEPARATOR",
+                            "label": "Node info"
+                        },
+                        {
+                            "name": "auto_host",
+                            "label": "Host",
+                            "defaultValue": "https://",
+                            "type": "STRING",
+                            "mandatory": true
+                        },
+                        {
+                            "name": "auto_api_key",
+                            "label": "API Key",
+                            "type": "PASSWORD",
+                            "mandatory": true
+                        }
+                    ]
+                }
+            ]
+          },
+          {
+            "name": "separator_other_settings",
+            "label": "Other settings",
+            "type": "SEPARATOR"
+          },
+          {
+              "type": "STRING",
+              "name": "pat_backend_folder_full_id",
+              "label": "PAT Backend Folder Full ID",
+              "default" : "PROJECT_KEY.managed_folder_id",
+              "description": "Use the format PROJECT_KEY.FOLDER_ID",
+              "mandatory": true
+          },
+          {
+              "name": "use_llm_powered_checks",
+              "label": "Use LLM Powered Checks",
+              "type": "BOOLEAN",
+              "mandatory": false,
+              "default" : true
+          },
+          {
+              "type": "LLM",
+              "name": "llm_id",
+              "label": "PAT LLM",
+              "description": "Select LLM to use for PAT checks",
+              "mandatory": true,
+              "visibilityCondition": "model.use_llm_powered_checks"
+          },
+          {
+              "type": "BOOLEAN",
+              "name": "show_advanced_settings",
+              "label": "Show Advanced Settings",
+              "mandatory": true,
+              "default" : false
+          },
+          {
+            "name": "logging_level",
+            "label": "Logging Level",
+            "description": "Level of detail for PAT logging",
+            "type": "SELECT",
+            "defaultValue": "DEBUG",
+            "selectChoices": [
+                { "value": "CRITICAL", "label": "CRITICAL"},
+                {"value": "ERROR","label": "ERROR"},
+                {"value": "WARNING","label": "WARNING"},
+                {"value": "INFO","label": "INFO"},
+                {"value": "DEBUG","label": "DEBUG"}
+            ],
+            "visibilityCondition": "model.show_advanced_settings",
+            "mandatory": true
+          },
+          {
+              "name": "run_pat_in_parallel",
+              "label": "Run PAT in parallel",
+              "type": "BOOLEAN",
+              "mandatory": true,
+              "visibilityCondition": "model.show_advanced_settings",
+              "default" : false
+          },
+          {
+            "name": "nbr_parallel_runs",
+            "label": "Number of Parallel Runs",
+            "type": "INT",
+            "mandatory": true,
+            "defaultValue": 5,
+            "visibilityCondition": "model.show_advanced_settings && model.run_pat_in_parallel"
+          },
+          {
+              "name": "verify_ssl_certificate",
+              "label": "Verify SSL certificate",
+              "type": "BOOLEAN",
+              "mandatory": true,
+              "visibilityCondition": "model.show_advanced_settings",
+              "default" : true
+          }
+    ]
+    
+}

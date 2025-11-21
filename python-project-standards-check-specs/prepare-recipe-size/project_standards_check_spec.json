@@ -1,0 +1,33 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Prepare recipes must not have too many steps",
+    "description": "Check that the project's prepare recipes do not have too many top-level steps",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      {
+          "name": "max_top_level_steps",
+          "label": "Max top level prepare recipe steps",
+          "type": "INT",
+          "defaultValue" : 20,
+          "mandatory": true
+      },
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "2",
+          "mandatory": true
+      }
+      
+  ]
+}

@@ -1,0 +1,49 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project home page must be populated",
+    "description": "Check that the project home page has been populated",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      
+      {
+          "name": "check_short_description",
+          "label": "Check short description",
+          "type": "BOOLEAN",
+          "defaultValue" : true,
+          "mandatory": true
+          
+      },
+      {
+          "name": "check_long_description",
+          "label": "Check short description",
+          "type": "BOOLEAN",
+          "defaultValue" : true,
+          "mandatory": true
+          
+      },
+      {
+          "name": "check_project_image",
+          "label": "Check Project Image",
+          "type": "BOOLEAN",
+          "defaultValue" : false,
+          "mandatory": true
+      },
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "3",
+          "mandatory": true
+      }
+  ]
+}

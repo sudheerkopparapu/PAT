@@ -1,0 +1,25 @@
+/* This file is the descriptor for the Custom python Project Standards Check template main-scenario-exists */
+{
+  "meta": {
+    "label": "Project must have a main scenario",
+    "description": "Checks that the project has a main scenario as an entry point to run the project automatically. This scenario should have a trigger, a reporter, and be properly tagged as “main” for identification using project-level and global tags. This check requires a global tag category named “Scenario Type” with a tag named “main”.",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["AUTOMATION"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "1",
+          "mandatory": true
+      }
+  ]
+}

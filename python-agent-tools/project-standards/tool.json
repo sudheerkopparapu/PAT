@@ -1,0 +1,10 @@
+/* This file is the descriptor for custom agent tool project-standards */
+{
+    "meta" : {
+        "label": "Run Project Standards",
+        "description": "Run Project Standards on a given project",
+        "icon": "fas fa-file-invoice"
+    },
+    "params": [
+    ]
+}

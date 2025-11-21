@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Webapps code length must not be too high",
+    "description": "Check that webapps in the project does not have too many rows",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["CODE"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of rows",
+      "type": "INT",
+      "defaultValue": 1000
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of rows",
+      "type": "INT",
+      "defaultValue": 2000
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of rows",
+      "type": "INT",
+      "defaultValue": 4000
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of rows",
+      "type": "INT",
+      "defaultValue": 10000
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of rows",
+      "type": "INT",
+      "defaultValue": 20000
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+// This file is the descriptor for webapp full-pat-report-webapp
+{
+    "meta": {
+        "label": "Full PAT Report",
+        "description": "Full PAT Report Webapp",
+        "icon": "icon-bar-chart"
+    },
+
+    "baseType": "DASH", // WARNING: do not change
+    "hasBackend": "true",
+    "noJSSecurity": "true",
+    "standardWebAppLibraries": null,
+
+    "params": [
+        {
+            "name": "pat_report_folder",
+            "label": "PAT Report Folder",
+            "type": "MANAGED_FOLDER",
+            "description": "Folder containing the PAT reports",
+            "canSelectForeign": true,
+            "markCreatedAsBuilt": true,
+            "mandatory": true
+        },
+        {
+            "name": "last_n_reports",
+            "label": "Last N reports",
+            "type": "INT",
+            "description": "Give the number of reports to pull in the webapp",
+            "defaultValue" : 5,
+            "mandatory": true
+        }
+        
+    ],
+
+
+    "roles": []
+}

@@ -1,0 +1,65 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Python must be properly formatted",
+    "description": "Check that the project's code library Python scripts and Python recipes are properly formatted",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": [
+    "CODE"
+  ],
+  "params": [
+    {
+      "name": "formatter",
+      "label": "Python Formatter",
+      "description": "You can choose from 'yapf' or 'pep8'",
+      "type": "SELECT",
+      "selectChoices": [
+        {
+          "value": "yapf",
+          "label": "yapf"
+        },
+        {
+          "value": "pep8",
+          "label": "pep8"
+        }
+      ],
+      "defaultValue": "pep8"
+    },
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality percentage of lines needing reformatting",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality percentage of lines needing reformatting",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality percentage of lines needing reformatting",
+      "type": "INT",
+      "defaultValue": 20
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality percentage of lines needing reformatting",
+      "type": "INT",
+      "defaultValue": 40
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality percentage of lines needing reformatting",
+      "type": "INT",
+      "defaultValue": 80
+    }
+  ]
+}

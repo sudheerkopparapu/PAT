@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must be active",
+    "description": "Check that the project is active",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["ROBUSTNESS"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of days since last activity",
+      "type": "INT",
+      "defaultValue": 60
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of days since last activity",
+      "type": "INT",
+      "defaultValue": 90
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of days since last activity",
+      "type": "INT",
+      "defaultValue": 180
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of days since last activity",
+      "type": "INT",
+      "defaultValue": 360
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of days since last activity",
+      "type": "INT",
+      "defaultValue": 540
+    }
+  ]
+}

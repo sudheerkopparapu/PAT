@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "label": "Scenarios must not have too many steps",
+    "description": "Check that the number of steps in a scenario is below a certain threshold",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["AUTOMATION"],
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of steps",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of steps",
+      "type": "INT",
+      "defaultValue": 15
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of steps",
+      "type": "INT",
+      "defaultValue": 20
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of steps",
+      "type": "INT",
+      "defaultValue": 50
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of steps",
+      "type": "INT",
+      "defaultValue": 100
+    }
+  ]
+}

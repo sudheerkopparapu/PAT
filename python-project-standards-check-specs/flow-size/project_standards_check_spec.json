@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must not have too many datasets",
+    "description": "Check that the project flow does not contain too many datasets",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["FLOW"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 200
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 300
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 500
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 1000
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 5000
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+    "meta": {
+        "label": "Intermediate dataset connection must have a specific connection type",
+        "description": "Check that intermediate datasets conform to a pre-selected connection type",
+        "icon": "fas fa-check-circle"
+    },
+    "tags": [
+        "FLOW"
+    ],
+    "params": [
+        {
+            "name": "include_output_datasets",
+            "label": "Include output datasets",
+            "description": "Include a flow's output datasets alongside intermediate datasets during assessment",
+            "type": "BOOLEAN",
+            "defaultValue": true
+        },
+        {
+            "name": "intermediate_dataset_connection_type",
+            "label": "Intermediate dataset connection type",
+            "description": "Choose a dataset type to which you would like your datasets to conform",
+            "type": "SELECT",
+            "selectChoices": [
+                {
+                    "value": "Filesystem",
+                    "label": "Filesystem"
+                },
+                {
+                    "value": "S3",
+                    "label": "S3"
+                },
+                {
+                    "value": "Azure",
+                    "label": "Azure Blob Storage"
+                },               
+                                {
+                    "value": "GCS",
+                    "label": "Google Cloud Storage"
+                },
+                {
+                    "value": "SharePointOnline",
+                    "label": "SharePoint"
+                },
+                {
+                    "value": "PostgreSQL",
+                    "label": "PostgreSQL"
+                },
+                {
+                    "value": "Snowflake",
+                    "label": "Snowflake"
+                },
+                {
+                    "value": "Databricks",
+                    "label": "Databricks"
+                },
+                {
+                    "value": "MySQL",
+                    "label": "MySQL"
+                },
+                {
+                    "value": "SQLServer",
+                    "label": "SQLServer"
+                },
+                {
+                    "value": "BigQuery",
+                    "label": "BigQuery"
+                },
+                {
+                    "value": "Redshift",
+                    "label": "Redshift"
+                }
+                                
+                
+            ],
+            "defaultValue": "none"
+        },
+        {
+            "name": "lowest",
+            "label": "Lowest criticality threshold",
+            "description": "Lowest criticality number of non-conforming datasets",
+            "type": "INT",
+            "defaultValue": 1
+        },
+        {
+            "name": "low",
+            "label": "Low criticality threshold",
+            "description": "Low criticality number of non-conforming datasets",
+            "type": "INT",
+            "defaultValue": 2
+        },
+        {
+            "name": "medium",
+            "label": "Medium criticality threshold",
+            "description": "Medium criticality number of non-conforming datasets",
+            "type": "INT",
+            "defaultValue": 5
+        },
+        {
+            "name": "high",
+            "label": "High criticality threshold",
+            "description": "High criticality number of non-conforming datasets",
+            "type": "INT",
+            "defaultValue": 10
+        },
+        {
+            "name": "critical",
+            "label": "Critical criticality threshold",
+            "description": "Critical criticality number of non-conforming datasets",
+            "type": "INT",
+            "defaultValue": 25
+        }
+    ]
+}

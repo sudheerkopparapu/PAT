@@ -1,0 +1,25 @@
+/* This file is the descriptor for the Custom python Project Standards Check template sql-query-dataset */
+{
+  "meta": {
+    "label": "Project must not have SQL query datasets",
+    "description": "Check that all (input) SQL datasets in the project are loaded from a SQL table, not a SQL query",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["PERFORMANCE"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "4",
+          "mandatory": true
+      }
+  ]
+}

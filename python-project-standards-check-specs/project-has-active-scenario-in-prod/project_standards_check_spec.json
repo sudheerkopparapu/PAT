@@ -1,0 +1,32 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project must have an active scenario in production",
+    "description": "Check that the project has at least one auto-trigger scenario for every deployment",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DEPLOYMENT"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "4",
+          "mandatory": true
+      },
+      {
+          "name": "infras_to_ignore",
+          "label": "Infra ids to ignore",
+          "type": "STRINGS",
+          "defaultValue" : [],
+          "mandatory": true
+      }
+  ]
+}

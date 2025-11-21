@@ -1,0 +1,44 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project datasets must be documented",
+    "description": "Check that datasets in the project are documented",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      {
+          "name": "datasets_to_consider",
+          "label": "Datasets to Consider",
+          "type": "MULTISELECT",
+          "selectChoices" : [
+              { "value": "input", "label": "Input Datasets"},
+              { "value": "output", "label": "Output Datasets"},
+              { "value": "shared", "label": "Shared Datasets"}
+          ],
+          "defaultValue" : ["input", "output", "shared"],
+          "mandatory": true
+      },
+      {
+          "name": "coverage",
+          "label": "Coverage % [0 to 100]",
+          "type": "INT",
+          "defaultValue" : 100,
+          "mandatory": true
+      },
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "2",
+          "mandatory": true
+      }
+  ]
+}

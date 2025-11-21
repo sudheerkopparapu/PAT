@@ -1,0 +1,49 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project wiki must have references",
+    "description": "Check that the project wiki has references to all the relevant elements of the project",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      {
+          "name": "dss_objects_to_check",
+          "label": "DSS Objects to check",
+          "type": "MULTISELECT",
+          "selectChoices" : [
+              { "value": "scenario", "label": "Scenarios"},
+              { "value": "saved_model", "label": "Saved Models"},
+              { "value": "webapp", "label": "Shared Datasets"},
+              { "value": "dashboard", "label": "Dashboards"},
+              { "value": "flow_zone", "label": "Flow Zones"},
+              { "value": "source_dataset", "label": "Source Datasets"},
+              { "value": "shared_dataset", "label": "Shared Datasets"},
+              { "value": "output_dataset", "label": "Output Datasets"}
+          ],
+          "defaultValue" : ["scenario", "saved_model", "webapp","dashboard", "flow_zone", "source_dataset", "shared_dataset", "output_dataset" ],
+          "mandatory": true
+      },
+      {
+          "name": "coverage",
+          "label": "Coverage % [0 to 100]",
+          "type": "INT",
+          "defaultValue" : 100,
+          "mandatory": true
+      },
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "2",
+          "mandatory": true
+      }
+  ]
+}

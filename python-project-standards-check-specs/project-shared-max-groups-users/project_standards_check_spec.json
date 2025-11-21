@@ -1,0 +1,62 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must not be shared to too many users",
+    "description": "Check that the project is not shared to too many groups and users",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["FLOW"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of users",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of users",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of users",
+      "type": "INT",
+      "defaultValue": 20
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of users",
+      "type": "INT",
+      "defaultValue": 40
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of users",
+      "type": "INT",
+      "defaultValue": 100
+    },
+    {
+      "name": "not_shared_severity",
+      "label": "Project Not Shared Severity",
+      "type": "SELECT",
+      "selectChoices" : [
+          { "value": "1", "label": "LOWEST"},
+          { "value": "2", "label": "LOW"},
+          { "value": "3", "label": "MEDIUM"},
+          { "value": "4", "label": "HIGH"},
+          { "value": "5", "label": "CRITICAL"}
+      ],
+      "defaultValue" : "3",
+      "mandatory": true
+    }
+  ]
+}

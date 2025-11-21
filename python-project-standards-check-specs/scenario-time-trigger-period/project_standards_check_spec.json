@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Scenarios must not be run too frequently",
+    "description": "Check that time-based scenario triggers are not too frequent",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["AUTOMATION"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality trigger period",
+      "type": "INT",
+      "defaultValue": 120
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality trigger period",
+      "type": "INT",
+      "defaultValue": 60
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality trigger period",
+      "type": "INT",
+      "defaultValue": 20
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality trigger period",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality trigger period",
+      "type": "INT",
+      "defaultValue": 2
+    }
+  ]
+}

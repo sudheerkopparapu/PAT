@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "label": "Last run of the main scenario must be successful",
+    "description": "Check that the latest run of the main scenario of the project succeeded",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["AUTOMATION"],
+  "params": [
+    {
+      "name": "severity",
+      "label": "Severity level",
+      "type": "SELECT",
+      "selectChoices" : [
+          { "value": "1", "label": "LOWEST"},
+          { "value": "2", "label": "LOW"},
+          { "value": "3", "label": "MEDIUM"},
+          { "value": "4", "label": "HIGH"},
+          { "value": "5", "label": "CRITICAL"}
+      ],
+      "defaultValue" : "1",
+      "mandatory": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Python recipes must be simple",
+    "description": "Check that size of the Python recipes in the project do not have not too many lines",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["CODE", "FLOW"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of rows",
+      "type": "INT",
+      "defaultValue": 200
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of rows",
+      "type": "INT",
+      "defaultValue": 500
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of rows",
+      "type": "INT",
+      "defaultValue": 2000
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of rows",
+      "type": "INT",
+      "defaultValue": 4000
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of rows",
+      "type": "INT",
+      "defaultValue": 10000
+    }
+  ]
+}

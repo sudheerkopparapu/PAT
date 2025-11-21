@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must not have unused datasets",
+    "description": "Check that project has no unused datasets",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["ROBUSTNESS"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 1
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 30
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 100
+    }
+  ]
+}

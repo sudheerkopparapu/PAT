@@ -1,0 +1,25 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Project must have a scenario",
+    "description": "Check that the project has at least one scenario",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["AUTOMATION"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "3",
+          "mandatory": true
+      }
+  ]
+}

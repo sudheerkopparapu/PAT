@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must not have SQL recipes that could be visual recipes",
+    "description": "Check that the project does not have SQL recipes that can be converted to visual recipes",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["CODE", "FLOW", "GENAI"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of convertible recipes",
+      "type": "INT",
+      "defaultValue": 1
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of convertible recipes",
+      "type": "INT",
+      "defaultValue": 2
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of convertible recipes",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of convertible recipes",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of convertible recipes",
+      "type": "INT",
+      "defaultValue": 20
+    }
+  ]
+}

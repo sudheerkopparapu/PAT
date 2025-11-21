@@ -1,0 +1,25 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-status-is-set */
+{
+  "meta": {
+    "label": "Project status must be set",
+    "description": "Check that the user has set the project’s status on the project home page according to instance standards",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DOCUMENTATION"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "3",
+          "mandatory": true
+      }
+  ]
+}

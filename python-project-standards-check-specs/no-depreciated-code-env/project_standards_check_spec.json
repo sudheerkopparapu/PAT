@@ -1,0 +1,46 @@
+/* This file is the descriptor for the Custom python Project Standards Check template no-depreciated-code-env */
+{
+  "meta": {
+    "label": "Project should not use deprecated python interpreter",
+    "description": "Checks that the project doesn't use a code environment with a deprecated interpreter",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["CODE"],
+  "params": [
+      {
+          "name": "py_version",
+          "label": "Acceptable Minimum Python Versions",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": 39, "label": "PYTHON39"},
+              { "value": 310, "label": "PYTHON310"},
+              { "value": 311, "label": "PYTHON311"},
+              { "value": 312, "label": "PYTHON312"},
+              { "value": 313, "label": "PYTHON313"},
+              { "value": 314, "label": "PYTHON314"},
+              { "value": 315, "label": "PYTHON315"},
+              { "value": 316, "label": "PYTHON316"},
+              { "value": 317, "label": "PYTHON317"},
+              { "value": 318, "label": "PYTHON318"},
+              { "value": 319, "label": "PYTHON319"},
+              { "value": 320, "label": "PYTHON320"}
+          ],
+          "defaultValue" : 39,
+          "mandatory": true
+      },
+      {
+          "name": "severity",
+          "label": "Severity Level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "4",
+          "mandatory": true
+      }
+  ]
+}

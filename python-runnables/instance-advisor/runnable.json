@@ -1,0 +1,66 @@
+/* This file is the descriptor for the python runnable instance-advisor */
+{
+    "meta": {
+        "label": "Instance Assessment Tool",
+        "description": "Run the Instance Assessment Tool on the instance",
+        "icon": "icon-bar-chart"
+    },
+
+    "impersonate": false,
+    
+    /* whether the runnable's code gets admin access to Dataiku */
+    "requiresGlobalAdmin" : true,
+
+    "params": [
+        {
+            "name": "pat_report_folder",
+            "label": "PAT Report Folder",
+            "type": "MANAGED_FOLDER",
+            "description": "Folder for logging PAT reports over time",
+            "markCreatedAsBuilt": true,
+            "mandatory": true
+        },
+        {
+            "name": "instance_check_config_preset",
+            "label": "Instance Check config",
+            "type": "PRESET",
+            "parameterSetId": "instance-check-config",
+            "mandatory": true
+        },
+        {
+            "name": "instance_check_filter_preset",
+            "label": "Instance Check filter",
+            "type": "PRESET",
+            "parameterSetId": "instance-check-filter",
+            "mandatory": true
+        },
+        {
+            "name": "rebuild_pat_backend",
+            "label": "Rebuild PAT Backend (Requires Admin Permissions)",
+            "type": "BOOLEAN",
+            "defaultValue" : true,
+            "mandatory": true
+        }
+    ],
+
+    "permissions": [],
+
+    /* what the code's run() returns:
+       - NONE : no result
+       - HTML : a string that is a html (utf8 encoded)
+       - FOLDER_FILE : a (folderId, path) pair to a file in a folder of this project (json-encoded)
+       - FILE : raw data (as a python string) that will be stored in a temp file by DSS
+       - URL : a url
+     */
+    "resultType": "HTML",
+
+    "resultLabel": "my production",
+
+    /* for FILE resultType, the extension to use for the temp file */
+    "extension": "txt",
+
+    /* for FILE resultType, the type of data stored in the temp file */
+    "mimeType": "text/plain",
+
+    "macroRoles": []
+}

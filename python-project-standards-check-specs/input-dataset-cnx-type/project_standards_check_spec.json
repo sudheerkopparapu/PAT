@@ -1,0 +1,115 @@
+/* This file is the descriptor for the Custom python Project Standards Check template input-dataset-cnx-type */
+{
+    "meta": {
+        "label": "Input datasets must have a specific connection type",
+        "description": "Check that input datasets conform to a pre-selected connection type.",
+        "icon": "fas fa-check-circle"
+    },
+    "tags": [
+        "FLOW"
+    ],
+    "params": [
+        {
+            "name": "input_dataset_connection_types",
+            "label": "Input Dataset Connection Type",
+            "description": "Choose a dataset type to which you would like your datasets to conform",
+            "type": "MULTISELECT",
+            "selectChoices": [ 
+                {
+                    "value": "UploadedFiles",
+                    "label": "Uploaded Files"
+                },
+                {
+                    "value": "Filesystem",
+                    "label": "Filesystem"
+                },
+                {
+                    "value": "Inline",
+                    "label": "Editable"
+                },
+                {
+                    "value": "S3",
+                    "label": "S3"
+                },
+                {
+                    "value": "Azure",
+                    "label": "Azure Blob Storage"
+                },               
+                                {
+                    "value": "GCS",
+                    "label": "Google Cloud Storage"
+                },
+                {
+                    "value": "SharePointOnline",
+                    "label": "SharePoint"
+                },
+                {
+                    "value": "PostgreSQL",
+                    "label": "PostgreSQL"
+                },
+                {
+                    "value": "Snowflake",
+                    "label": "Snowflake"
+                },
+                {
+                    "value": "Databricks",
+                    "label": "Databricks"
+                },
+                {
+                    "value": "MySQL",
+                    "label": "MySQL"
+                },
+                {
+                    "value": "SQLServer",
+                    "label": "SQLServer"
+                },
+                {
+                    "value": "BigQuery",
+                    "label": "BigQuery"
+                },
+                {
+                    "value": "Redshift",
+                    "label": "Redshift"
+                }
+                                
+                
+            ],
+            "defaultValue": ["Snowflake", "S3", "UploadedFiles"]
+        },
+        {
+            "name": "lowest",
+            "label": "Lowest Criticality Threshold",
+            "description": "Lowest Criticality Number of Non-Conforming Datasets",
+            "type": "INT",
+            "defaultValue": 1
+        },
+        {
+            "name": "low",
+            "label": "Low Criticality Threshold",
+            "description": "Low Criticality Number of of Non-Conforming Datasets",
+            "type": "INT",
+            "defaultValue": 2
+        },
+        {
+            "name": "medium",
+            "label": "Medium Criticality Threshold",
+            "description": "Medium Criticality Number of Non-Conforming Datasets",
+            "type": "INT",
+            "defaultValue": 5
+        },
+        {
+            "name": "high",
+            "label": "High Criticality Threshold",
+            "description": "High Criticality Number of Non-Conforming Datasets",
+            "type": "INT",
+            "defaultValue": 10
+        },
+        {
+            "name": "critical",
+            "label": "Critical Criticality Threshold",
+            "description": "Critical Criticality Number of Non-Conforming Datasets",
+            "type": "INT",
+            "defaultValue": 25
+        }
+    ]
+}

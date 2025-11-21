@@ -1,0 +1,65 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "SQL must be properly formatted",
+    "description": "Check whether the project's SQL recipes are properly formatted.",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": [
+    "CODE"
+  ],
+  "params": [
+    {
+      "name": "decision_criteria",
+      "label": "Decision Criteria",
+      "description": "Use total number of formatting changes OR average number of formatting changes per SQL recipe to determine criticality",
+      "type": "SELECT",
+      "selectChoices": [
+        {
+          "label": "Total Number of Formatting Changes",
+          "value": "total"
+        },
+        {
+          "label": "Average Number of Formatting Changes Per Recipe",
+          "value": "average"
+        }
+      ],
+      "defaultValue": "total"
+    },
+    {
+      "name": "lowest",
+      "label": "Lowest Criticality Threshold",
+      "description": "Lowest criticality percentage of SQL script needing reformatting",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "low",
+      "label": "Low Criticality Threshold",
+      "description": "Low criticality percentage of SQL script needing reformatting",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "medium",
+      "label": "Medium Criticality Threshold",
+      "description": "Medium criticality percentage of SQL script needing reformatting",
+      "type": "INT",
+      "defaultValue": 20
+    },
+    {
+      "name": "high",
+      "label": "High Criticality Threshold",
+      "description": "High criticality percentage of SQL script needing reformatting",
+      "type": "INT",
+      "defaultValue": 40
+    },
+    {
+      "name": "critical",
+      "label": "Critical Criticality Threshold",
+      "description": "Critical criticality percentage of SQL script needing reformatting",
+      "type": "INT",
+      "defaultValue": 80
+    }
+  ]
+}

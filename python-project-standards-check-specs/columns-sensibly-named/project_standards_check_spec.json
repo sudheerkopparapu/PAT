@@ -1,0 +1,123 @@
+/* This file is the descriptor for the Custom python Project Standards Check template columns-sensibly-named */
+{
+    "meta": {
+        "label": "Dataset columns must be sensibly named",
+        "description": "Check that all dataset columns in the project adhere to proper naming conventions.",
+        "icon": "fas fa-check-circle"
+    },
+    "tags": [
+        "ROBUSTNESS"
+    ],
+    "params": [
+        {
+            "name": "connection_types",
+            "label": "Dataset Connection Type",
+            "description": "Choose which connection types to apply the check for.",
+            "type": "MULTISELECT",
+            "selectChoices": [ 
+                {
+                    "value": "UploadedFiles",
+                    "label": "Uploaded Files"
+                },
+                {
+                    "value": "Filesystem",
+                    "label": "Filesystem"
+                },
+                {
+                    "value": "Inline",
+                    "label": "Editable"
+                },
+                {
+                    "value": "S3",
+                    "label": "S3"
+                },
+                {
+                    "value": "Azure",
+                    "label": "Azure Blob Storage"
+                },               
+                {
+                    "value": "GCS",
+                    "label": "Google Cloud Storage"
+                },
+                {
+                    "value": "SharePointOnline",
+                    "label": "SharePoint"
+                },
+                {
+                    "value": "PostgreSQL",
+                    "label": "PostgreSQL"
+                },
+                {
+                    "value": "Snowflake",
+                    "label": "Snowflake"
+                },
+                {
+                    "value": "Databricks",
+                    "label": "Databricks"
+                },
+                {
+                    "value": "MySQL",
+                    "label": "MySQL"
+                },
+                {
+                    "value": "SQLServer",
+                    "label": "SQLServer"
+                },
+                {
+                    "value": "BigQuery",
+                    "label": "BigQuery"
+                },
+                {
+                    "value": "Redshift",
+                    "label": "Redshift"
+                }
+                                
+                
+            ],
+            "defaultValue": ["UploadedFiles", "Filesystem", "Inline", "Snowflake", "S3", "Azure", "GCS", "SharePointOnline", "PostgreSQL", "Databricks", "MySQL", "SQLServer", "BigQuery", "Redshift"]
+        },
+        {
+            "name" : "pattern",
+            "label" : "Regex pattern used for column naming.",
+            "description": "The default pattern means: The column name must be one or more alphanumeric characters or underscores. Nothing else. This will be applied to the connections selected above. If you want to specify another pattern for a separate set of connections, create another instance of this check.",
+            "type" : "STRING",
+            "defaultValue": "^[a-zA-Z0-9_]+$"
+        
+        },
+        {
+            "name": "lowest",
+            "label": "Lowest Criticality Threshold",
+            "description": "Lowest Criticality Number of Non-Conforming Column Names",
+            "type": "INT",
+            "defaultValue": 1
+        },
+        {
+            "name": "low",
+            "label": "Low Criticality Threshold",
+            "description": "Low Criticality Number of Non-Conforming Column Names",
+            "type": "INT",
+            "defaultValue": 2
+        },
+        {
+            "name": "medium",
+            "label": "Medium Criticality Threshold",
+            "description": "Medium Criticality Number of Non-Conforming Column Names",
+            "type": "INT",
+            "defaultValue": 5
+        },
+        {
+            "name": "high",
+            "label": "High Criticality Threshold",
+            "description": "High Criticality Number of Non-Conforming Column Names",
+            "type": "INT",
+            "defaultValue": 10
+        },
+        {
+            "name": "critical",
+            "label": "Critical Criticality Threshold",
+            "description": "Critical Criticality Number of Non-Conforming Column Names",
+            "type": "INT",
+            "defaultValue": 25
+        }
+    ]
+}

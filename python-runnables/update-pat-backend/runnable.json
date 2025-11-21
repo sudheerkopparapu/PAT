@@ -1,0 +1,44 @@
+/* This file is the descriptor for the python runnable build-pat-backend */
+{
+    "meta": {
+        "label": "Refresh PAT Backend",
+        "description": "Recompute the PAT Backend Datasets",
+        "icon": "fas fa-database"
+    },
+    "impersonate": false,
+    "requiresGlobalAdmin" : true,
+    "params": [
+        {
+          "type": "MULTISELECT",
+          "name": "pat_backend_tables",
+          "label": "Select PAT backend Tables to re-build",
+          "defaultValue" : [
+              "project_dependencies",
+              "project_deployments", 
+              "plugins_usage", 
+              "project_to_folder_path",
+              "projects",
+              "users",
+              "user_to_project_mapping",
+              "scenarios"
+          ],
+          "selectChoices": [
+            { "value": "project_dependencies", "label": "Project Dependencies"},
+            { "value": "project_deployments", "label": "Project Deployments"},
+            { "value": "plugins_usage", "label": "Plugins Usage"},
+            { "value": "project_to_folder_path", "label": "Project to Folder Path"},
+            { "value": "projects", "label": "Projects"},
+            { "value": "users", "label": "Users"},
+            { "value": "user_to_project_mapping", "label": "User to Project Mapping"},
+            { "value": "scenarios", "label": "Scenarios"}
+          ]
+        }
+    ],
+    "permissions": [],
+    "resultType": "HTML",
+    "resultLabel": "my production",
+    "extension": "txt",
+    "mimeType": "text/plain",
+    "macroRoles": [
+    ]
+}

@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "label": "All SQL pipelines available in a project must be activated",
+    "description": "Check that all virtualizable SQL datasets are virtualized with SQL pipelines",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["PERFORMANCE"],
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 1
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 2
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of datasets",
+      "type": "INT",
+      "defaultValue": 100
+    }
+  ]
+}

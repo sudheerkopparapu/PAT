@@ -1,0 +1,25 @@
+/* This file is the descriptor for the Custom python Project Standards Check template use-sql-push-down */
+{
+  "meta": {
+    "label": "Project must use SQL push down computation",
+    "description": "Check that the project uses SQL push down computation when possible",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["PERFORMANCE"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "4",
+          "mandatory": true
+      }
+  ]
+}

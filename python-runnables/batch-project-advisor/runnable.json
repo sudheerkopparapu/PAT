@@ -1,0 +1,91 @@
+/* This file is the descriptor for the python runnable instance-advisor */
+{
+    "meta": {
+        "label": "Projects Assessment Tool",
+        "description": "Run the Project Assessment Tool on multiple projects at once",
+        "icon": "icon-bar-chart"
+    },
+    "paramsPythonSetup": "params_helper.py",
+    
+    "impersonate": false,
+
+    "params": [
+        {
+            "type": "SELECT",
+            "name": "run_on",
+            "label": "Run on",
+            "selectChoices": [
+                { "value": "current", "label": "Current project"},
+                { "value": "multiple", "label": "Multiple projects"}
+            ],
+            "mandatory": true,
+            "defaultValue": "current"
+        },
+        {
+            "name": "folder_id",
+            "label": "Project Folder ID",
+            "type": "SELECT",
+            "description": "Project Folder ID to restrict the project search (leave ROOT to consider all projects)",
+            "visibilityCondition": "model.run_on == 'multiple'",
+            "defaultValue": "ROOT",
+            "getChoicesFromPython": true
+        },
+        {
+            "name": "project_status_list",
+            "label": "Project statuses to keep",
+            "type": "MULTISELECT",
+            "defaultValue" : [],
+            "description": "Filter project statuses (leave empty to consider all projects)",
+            "visibilityCondition": "model.run_on == 'multiple'",
+            "mandatory": true,
+            "getChoicesFromPython": true
+        },
+        {
+            "name": "project_keys",
+            "label": "Project keys to keep",
+            "type": "MULTISELECT",
+            "defaultValue" : [],
+            "description": "Filter project keys (leave empty to consider all projects)",
+            "visibilityCondition": "model.run_on == 'multiple'",
+            "mandatory": true,
+            "getChoicesFromPython": true
+        },
+        {
+            "name": "project_tags",
+            "label": "Project tags to keep",
+            "type": "STRINGS",
+            "defaultValue" : [],
+            "description": "Filter project containing at least one of these tags (leave empty to consider all projects)",
+            "visibilityCondition": "model.run_on == 'multiple'",
+            "mandatory": true
+        },
+        {
+            "name": "pat_report_folder",
+            "label": "PAT Report Folder",
+            "type": "MANAGED_FOLDER",
+            "description": "Folder for logging PAT reports over time",
+            "markCreatedAsBuilt": true,
+            "mandatory": true
+        },
+        {
+            "name": "rebuild_pat_backend",
+            "label": "Rebuild PAT Backend (Requires Admin Permissions)",
+            "type": "BOOLEAN",
+            "defaultValue" : false,
+            "mandatory": true
+        }
+
+    ],
+
+    "permissions": [],
+    
+    "resultType": "HTML",
+
+    "resultLabel": "my production",
+
+    "extension": "txt",
+
+    "mimeType": "text/plain",
+
+    "macroRoles": []
+}

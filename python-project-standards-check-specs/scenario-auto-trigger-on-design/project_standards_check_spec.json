@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "label": "Project must not have have auto-trigger turned on",
+    "description": "Check that project does not have auto-trigger turned on",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["AUTOMATION"],
+  "params": [
+    {
+      "name": "severity",
+      "label": "Severity level",
+      "type": "SELECT",
+      "selectChoices" : [
+          { "value": "1", "label": "LOWEST"},
+          { "value": "2", "label": "LOW"},
+          { "value": "3", "label": "MEDIUM"},
+          { "value": "4", "label": "HIGH"},
+          { "value": "5", "label": "CRITICAL"}
+      ],
+      "defaultValue" : "4",
+      "mandatory": true
+    }
+  ]
+}

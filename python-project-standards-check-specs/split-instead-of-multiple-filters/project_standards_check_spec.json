@@ -1,0 +1,48 @@
+/* This file is the descriptor for the Custom python Project Standards Check template flow-size */
+{
+  "meta": {
+    "label": "Project must not have filter recipes that should be split recipes",
+    "description": "Check that the project has a filter recipe that should be converted to a split recipe",
+    "icon": "fas fa-check-circle"
+  },
+
+  "tags": ["FLOW"],
+
+  "params": [
+    {
+      "name": "lowest",
+      "label": "Lowest criticality threshold",
+      "description": "Lowest criticality number of saveable recipes",
+      "type": "INT",
+      "defaultValue": 1
+    },
+    {
+      "name": "low",
+      "label": "Low criticality threshold",
+      "description": "Low criticality number of saveable recipes",
+      "type": "INT",
+      "defaultValue": 2
+    },
+    {
+      "name": "medium",
+      "label": "Medium criticality threshold",
+      "description": "Medium criticality number of saveable recipes",
+      "type": "INT",
+      "defaultValue": 5
+    },
+    {
+      "name": "high",
+      "label": "High criticality threshold",
+      "description": "High criticality number of saveable recipes",
+      "type": "INT",
+      "defaultValue": 10
+    },
+    {
+      "name": "critical",
+      "label": "Critical criticality threshold",
+      "description": "Critical criticality number of saveable recipes",
+      "type": "INT",
+      "defaultValue": 50
+    }
+  ]
+}

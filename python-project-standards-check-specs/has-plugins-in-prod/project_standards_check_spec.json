@@ -1,0 +1,32 @@
+/* This file is the descriptor for the Custom python Project Standards Check template project-has-scenario */
+{
+  "meta": {
+    "label": "Used plugins must be installed in prod",
+    "description": "Check that the all of the project's used plugins are installed in prod",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["DEPLOYMENT"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Severity level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "4",
+          "mandatory": true
+      },
+      {
+          "name": "infras_to_ignore",
+          "label": "List infra ids to ignore",
+          "type": "STRINGS",
+          "defaultValue" : [],
+          "mandatory": true
+      }
+  ]
+}

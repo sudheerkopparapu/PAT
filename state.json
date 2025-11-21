@@ -1,0 +1,12 @@
+{
+  "actions": [
+    {
+      "ts": 1763704169535,
+      "action": "INSTALL",
+      "user": "sudheer.kopparapu@dataiku.com"
+    }
+  ],
+  "gitState": {
+    "enabled": false
+  }
+}

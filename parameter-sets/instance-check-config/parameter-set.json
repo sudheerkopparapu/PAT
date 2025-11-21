@@ -1,0 +1,23 @@
+/* This file is the descriptor for the parameter set Global Advisor Setting */
+{
+    "meta": {
+        "label": "Instance Checks Config",
+        "description": "Configurable Instance Check Settings",
+        "icon": "icon-file-text"
+    },
+
+    "defaultDefinableInline": true,
+    
+    "defaultDefinableAtProjectLevel": true,
+    
+    "params": [
+        {
+            "name": "max_nbr_sanity_warnings",
+            "label": "max nbr sanity warnings",
+            "type": "INT",
+            "defaultValue" : 15,
+            "description": "Max number of sanity warnings",
+            "mandatory": true
+        }
+    ]
+}

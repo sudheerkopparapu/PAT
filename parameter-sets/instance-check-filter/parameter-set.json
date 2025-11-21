@@ -1,0 +1,28 @@
+/* This file is the descriptor for the parameter set instance-check-filter */
+{
+    "meta" : {
+        "label": "Instance Checks Filter",
+        "description": "Define Filters on the Instance Checks to run",
+        "icon": "fas fa-puzzle-piece"
+    },
+
+    "defaultDefinableInline": true,
+    "defaultDefinableAtProjectLevel": true,
+
+    "pluginParams": [],
+    
+    "params": [
+        {
+          "type": "MULTISELECT",
+          "name": "instance_check_categories",
+          "label": "Select Check Categories to run",
+          "defaultValue" : ["USAGE","PLATFORM", "PROCESSES", "CONFIGURATION"],
+          "selectChoices": [
+            { "value": "USAGE", "label": "USAGE"},
+            { "value": "PLATFORM", "label": "PLATFORM"},
+            { "value": "PROCESSES", "label": "PROCESSES"},
+            { "value": "CONFIGURATION", "label": "CONFIGURATION"}
+          ]
+        }
+    ]
+}

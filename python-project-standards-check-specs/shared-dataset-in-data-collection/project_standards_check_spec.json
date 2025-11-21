@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "label": "Heavily shared datasets must be documented and in a data collection",
+    "description": "Ensures datasets shared across multiple projects are properly documented and shared to a data collection",
+    "icon": "fas fa-check-circle"
+  },
+  "tags": ["ROBUSTNESS"],
+  "params": [
+      {
+          "name": "severity",
+          "label": "Issue Severity Level",
+          "type": "SELECT",
+          "selectChoices" : [
+              { "value": "1", "label": "LOWEST"},
+              { "value": "2", "label": "LOW"},
+              { "value": "3", "label": "MEDIUM"},
+              { "value": "4", "label": "HIGH"},
+              { "value": "5", "label": "CRITICAL"}
+          ],
+          "defaultValue" : "2",
+          "mandatory": true
+      },
+      {
+      "type": "INT",
+      "name": "max_nb_downstream_projects",
+      "label": "Minimum number of projects to consider a dataset 'heavily-shared'",
+      "description": "Datasets shared to this many projects or more will be checked",
+      "minI": 1,
+      "maxI": 5,
+      "defaultValue": 2,
+      "mandatory": true
+      },
+      {
+      "type": "BOOLEAN",
+      "name": "check_documentation",
+      "label": "Check documentation completeness",
+      "description": "Verify that heavily-shared datasets have proper documentation",
+      "defaultValue": true
+      },
+      {
+      "type": "BOOLEAN",
+      "name": "check_if_dataset_contains_tag",
+      "label": "Require dataset tags",
+      "description": "Check if heavily-shared datasets have descriptive tags",
+      "defaultValue": true,
+      "visibilityCondition": "model.check_documentation"    
+      },
+      {
+      "type": "BOOLEAN",
+      "name": "check_if_dataset_contains_description",
+      "label": "Require dataset description",
+      "description": "Check if heavily-shared datasets have short and long descriptions",
+      "defaultValue": true,
+      "visibilityCondition": "model.check_documentation"    
+      },
+      {
+      "type": "BOOLEAN",
+      "name": "check_if_dataset_columns_contains_description",
+      "label": "Require column descriptions",
+      "description": "Check if all columns in heavily-shared datasets have descriptions",
+      "defaultValue": true,
+      "visibilityCondition": "model.check_documentation"    
+      }
+  ]
+}
